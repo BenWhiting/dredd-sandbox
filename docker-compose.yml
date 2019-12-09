@@ -2,7 +2,9 @@ version: '3.5'
 
 services:
   go-server:
-    build: .
+    build: ./
+    expose:
+      - 7999
     networks:
       - test 
   dredd:
