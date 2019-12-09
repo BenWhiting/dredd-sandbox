@@ -11,7 +11,6 @@ func failingTest(w http.ResponseWriter, req *http.Request) {
 }
 
 func passingTest(w http.ResponseWriter, req *http.Request) {
-	req.Header.Add("content-type", "application/json")
 	mapD := map[string]string{"message": ""}
 	mapB, _ := json.Marshal(mapD)
 	fmt.Fprintf(w, string(mapB))
