@@ -1,0 +1,19 @@
+version: '3.5'
+
+services:
+  go-server:
+    build: .
+    networks:
+      - test 
+  dredd:
+    image: "apiaryio/dredd:12.0.2"
+    command: ["dredd", "swagger.yml", "http://go-server:7999"]
+    volumes:
+      - type: bind
+        source: ./swagger.yml
+        target: /swagger.yml
+    networks:
+      - test 
+
+networks:
+  test:

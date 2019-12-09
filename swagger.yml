@@ -1,0 +1,35 @@
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: Example API
+  license:
+    name: MIT
+host: www.example.com
+basePath: /
+schemes:
+  - http
+paths:
+  /fail:
+    get:
+      responses:
+        '200':
+          description: 'A super cool thing but not designed correctly'
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+            required:
+              - message
+  /pass:
+    get:
+      responses:
+        '200':
+          description: 'A super cool thing designed correctly'
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+            required:
+              - message
